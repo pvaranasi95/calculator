@@ -1,0 +1,6 @@
+projectKey=Caluculator
+serverUrl=http://localhost:9000
+serverVersion=10.4.1.88267
+dashboardUrl=http://localhost:9000/dashboard?id=Caluculator
+ceTaskId=b1c902f8-e16b-4232-8b66-14e0ef24d6e7
+ceTaskUrl=http://localhost:9000/api/ce/task?id=b1c902f8-e16b-4232-8b66-14e0ef24d6e7

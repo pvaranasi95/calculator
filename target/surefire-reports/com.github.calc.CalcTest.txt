@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.github.calc.CalcTest
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.848 s -- in com.github.calc.CalcTest
