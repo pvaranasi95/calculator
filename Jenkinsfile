@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        node {label 'Windows1'}
+    }
     tools {
         jdk 'JDK11'
         maven 'Maven'
@@ -13,12 +15,12 @@ pipeline {
         }
         stage('Maven validate') {
             steps{
-                sh "mvn validate"
+                bat "mvn validate"
             }
         }
         stage('Maven Package') {
             steps{
-                sh "mvn clean package"
+                bat "mvn clean package"
             }
         }
         // stage('Sonar Scan') {
