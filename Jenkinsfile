@@ -23,12 +23,14 @@ pipeline {
                 bat "mvn clean package"
             }
         }
-        // stage('Sonar Scan') {
-        //     steps{
-        //         sh'''mvn sonar:sonar -Dsonar.url=https://sonarqubepavan.com/ -Dsonar.login= sqp_0ea1297d3b0f75c5bedfe7f4d047fe28b9177280 -Dsonar.projectName=petclinic \
-        //             -Dsonar.java.binaries=. \
-        //             -Dsonar.projectKey=petclinic'''
-        //     }
-        // }
+         stage('Sonar Scan') {
+            steps{
+                 bat '''mvn clean verify sonar:sonar \
+                       -Dsonar.projectKey=Caluculator \
+                       -Dsonar.projectName='Caluculator' \
+                       -Dsonar.host.url=http://localhost:9000 \
+                    -Dsonar.token=sqp_6b24a8184ed60a5c6ad8dd29fe39ad08bf2c642c'''
+             }
+         }
     }
 }
