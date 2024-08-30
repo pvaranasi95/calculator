@@ -37,5 +37,10 @@ pipeline {
                 bat "docker build -t calculator ."
             }
         }
+        stage('Docker image push') {
+            steps{
+                bat "docker push calculator"
+            }
+        }
     }
 }
