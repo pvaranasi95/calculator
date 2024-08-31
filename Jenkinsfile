@@ -2,9 +2,6 @@ pipeline {
     agent {
         node {label 'Windows1'}
     }
-    parameters {
-  choice choices: ['main', 'feature', 'release'], name: 'Branch'
-    }
     tools {
         jdk 'JDK11'
         maven 'Maven'
