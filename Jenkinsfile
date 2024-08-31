@@ -2,6 +2,9 @@ pipeline {
     agent {
         node {label 'Windows1'}
     }
+    parameters {
+  choice choices: ['main', 'feature', 'release'], name: 'Branch'
+    }
     tools {
         jdk 'JDK11'
         maven 'Maven'
@@ -10,7 +13,7 @@ pipeline {
     stages {
         stage('Git checkout') {
             steps {
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/pvaranasi95/calculator.git']])
+                checkout scmGit(branches: [[name: 'params.Branch']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/pvaranasi95/calculator.git']])
             }
         }
         stage('Maven validate') {
