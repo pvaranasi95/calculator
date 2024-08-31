@@ -34,12 +34,12 @@ pipeline {
          }
         stage('Docker Image') {
             steps{
-                bat "docker build -t calculator ."
+                bat "docker build -t pvaranasi/calculator ."
             }
         }
         stage('Docker image push') {
             steps{
-                bat "docker push calculator"
+                bat "docker push pvaranasi/calculator"
             }
         }
     }
