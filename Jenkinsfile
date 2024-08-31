@@ -23,15 +23,15 @@ pipeline {
                 bat "mvn clean package"
             }
         }
-         stage('Sonar Scan') {
-            steps{
-                 bat '''mvn clean verify sonar:sonar \
-                       -Dsonar.projectKey=Caluculator \
-                       -Dsonar.projectName='Caluculator' \
-                       -Dsonar.host.url=http://localhost:9000 \
-                    -Dsonar.token=sqp_6b24a8184ed60a5c6ad8dd29fe39ad08bf2c642c'''
-             }
-         }
+         // stage('Sonar Scan') {
+         //    steps{
+         //         bat '''mvn clean verify sonar:sonar \
+         //               -Dsonar.projectKey=Caluculator \
+         //               -Dsonar.projectName='Caluculator' \
+         //               -Dsonar.host.url=http://localhost:9000 \
+         //            -Dsonar.token=sqp_6b24a8184ed60a5c6ad8dd29fe39ad08bf2c642c'''
+         //     }
+         // }
         stage('Docker Image') {
             steps{
                 bat "docker build -t pvaranasi/calculator ."
