@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Git checkout') {
             steps {
-                checkout scmGit(branches: [[name: 'params.Branch']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/pvaranasi95/calculator.git']])
+                checkout scmGit(branches: [[name: '${params.Branch}']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/pvaranasi95/calculator.git']])
             }
         }
         stage('Maven validate') {
